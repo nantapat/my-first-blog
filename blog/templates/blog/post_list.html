@@ -1,22 +1,11 @@
-<html>
-    <head>
-        <title>Django Girls  blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Django Girls Blog/</a></h1>
-        </div>
-        <div>
-            <p>published: 14.06.2014,  12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <div>
-                Hi, I'm Nantaat Tianpanudech. I like Dr.House M.D.. He is very good man. 
-            </div>
-            <p>published: 15.07.2015,  23:08</p>
-            <div>
-                Hi, I'm John Carter. I like Dr.Strange. I think he is better than dr.House because he is a fantastic man!
-            </div>
+<div>
+    <h1><a href="/">/</a>Django Girls Blog</h1>
+</div>
 
-        </div>
-    </body>
-</html>
+{ % for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{ % enfor % }
